@@ -223,8 +223,7 @@ En el trabajo se presenta el uso del framework de segmentación de páginas Web 
 %
 BoM es la herramienta basada en el algoritmo homónimo \cite{Sanoja:ICMCS:2014}, para la segmentación de una página Web de forma automática. 
 \emph{MoB-protoype} (Prototipo de Manual-design of Blocks) es la herramienta de segmentación manual, cuya versión debe ser mejorada.
-Se utilizó como un prototipo de baja fidelidad implementado como una extensión para el navegador Chrome, llevando el proceso de manera semi-automática. 
-Está orientada a usuarios expertos. Puede verse un ejemplo en la Figura \ref{fig1}\footnote{Disponible en https://mob.ciens.ucv.ve} .
+Se utilizó como un prototipo de baja fidelidad implementado como una extensión para el navegador Chrome, llevando el proceso de manera semi-automática. Esta herramienta está orientada a usuarios expertos.
 
 \begin{figure}[htbp]
 \centerline{\includegraphics[width=250px]{old-mob.png}}
@@ -232,7 +231,7 @@ Está orientada a usuarios expertos. Puede verse un ejemplo en la Figura \ref{fi
 \label{fig1}
 \end{figure}
 
-Los usuarios crean bloques dependiendo de los elementos del DOM. 
+En la Figura \ref{fig1} se puede observar un ejemplo de como el usuario crea bloques dependiendo de los elementos del DOM. 
 Se obtiene un grafo de bloques (respetando la jerarquía en el DOM) o simplemente una segmentación plana (sólo bloques terminales). 
 Ambas segmentaciones se materializan en un documento XML. 
 Produce también un conjunto de rectángulos presentados de manera visual.
@@ -244,7 +243,7 @@ Se le propone al usuario aceptar o modificar la segmentación propuesta.
 Si el usuario desea modificar la segmentación, por ejemplo agregar un bloque, debe presionar F9 y hacer clic en el elemento que desea segmentar. 
 Mediante el uso de las flechas del teclado el usuario puede navegar la jerarquía del DOM.
 
-Una vez hecho esto se resaltará dicho elemento indicando que se ha segmentado.
+Una vez se hayan completado los pasos anteriormente mencionados, y el usuario escoja el elemento DOM que desea segmentar, se resaltará dicho elemento indicando que se ha segmentado.
 Este proceso resulta tedioso, complicado y propenso a errores, incluso para usuarios expertos. 
 Es recomendable realizar una mejora en la usabilidad de \emph{MoB-protoype}. 
 Por ejemplo, resaltar tentativamente el elemento que se desea segmentar permitiéndole al usuario una retroalimentación activa y se crea también un sistema de puntajes, el cual motiva a los usuarios a realizar segmentaciones, entre otros aspectos a considerar.
@@ -254,7 +253,7 @@ En las siguientes secciones se presentaran las mejoras realizadas a \emph{MoB-pr
 
 \section{Extensión MoB}
 \label{segmentacion_manual}
-La extensión de MoB es la herramienta de segmentación manual desarrollada por nosotros. Se utiliza Javascript, HTML5 y CSS3, como una extensión para navegadores Chrome y Chromium.
+La extensión de MoB es la herramienta de segmentación manual desarrollada por nosotros\footnote{Disponible en https://mob.ciens.ucv.ve}. Se utiliza Javascript, HTML5 y CSS3, como una extensión para navegadores Chrome y Chromium.
 
 \subsection{Funcionalidades de la Extensión MoB}
 \begin{itemize}
@@ -312,8 +311,8 @@ Se debe acotar la cantidad de bloques relativo al parámetro de granularidad.
 \subsubsection{Calculando la granularidad}
 
 La granularidad se considera como un valor G que se lee ``Granularidad del documento a un nivel G''. G es un parámetro de la segmentación.
-$G$ toma valores entre $0..10$. 
-Para poder garantizar una cantidad bloques máximos acordes a la granularidad seleccionada, se consideran los siguientes casos:
+$G$ toma valores enteros entre 0 y 10 (incluyendo el 0 y e 10). 
+Para poder garantizar una cantidad máxima de bloques segmentados con respecto a la granularidad seleccionada, se consideran los casos descritos en el Cuadro \ref{tab:calc_granularidad}.
 \begin{table}[!h]
 \caption{Cantidades Máximas de bloques}
 \label{tab:calc_granularidad}
@@ -368,14 +367,14 @@ En una situación ideal la segmentación está constituida con bloques que posea
 \label{fig3}
 \end{figure}
 
-En la Figura \ref{fig3} se puede observar que la nueva herramienta posee las siguientes características a diferencia de la antigua versión:
+Como se mencionó anteriormente en la Sección II, en el trabajo de  Sanoja y Gancarski (2015) \cite{Sanoja:LIP6:2015,SanGan:SAC:2015} se presenta una versión prototipo de la herramienta de segmentación manual la cual se busca mejorar en este presente trabajo. En la Figura \ref{fig3} se puede observar que la nueva versión de la herramienta posee las siguientes características a diferencia de la antigua versión:
 \begin{itemize}
-\item El color de los bloques de la nueva versión refleja el estado de los mismos y no el nivel de la segmentación, pues la segmentación es plana. En este ejemplo azul significa que está correcto y rojo que necesita atención. Se considera correcto verificando la granularidad, si tiene etiqueta, si no hay superposición de bloques, entre otras consideraciones menores.
-\item La nueva versión restringe al usuario a realizar una segmentación plana, lo cual se considera deseable, a diferencia de la versión anterior la cual es propensa a segmentar en múltiples niveles.    
-\item En la nueva versión el panel de información ofrece mayor información sobre la granularidad presente y los bloques, además de los posibles errores o advertencias que puedan ocurrir. 
-\item En la nueva versión la caja de herramienta ocupa menos espacio al estar conformada únicamente de metáforas de las acciones, también es semi-transparente para poder observar el contenido que existe detrás.
-\item En la nueva versión todas las acciones son llevadas a cabo únicamente con el ratón, sin tener que usar el teclado. 
-\item La nueva versión ofrece la acción de ``cortar'' para poder separar bloques que se intersectan, y la acción ``seleccionar'' que permite obtener toda la información de un bloque en específico.  
+\item El color de los bloques refleja el estado de los mismos y no el nivel de la segmentación, pues la segmentación es plana. En este ejemplo azul significa que está correcto y rojo que necesita atención. Se considera correcto verificando la granularidad, si tiene etiqueta, si no hay superposición de bloques, entre otras consideraciones menores.
+\item Se restringe al usuario a realizar una segmentación plana, lo cual se considera deseable, a diferencia de la versión anterior la cual es propensa a segmentar en múltiples niveles.    
+\item El panel de información ofrece mayor información sobre la granularidad presente y los bloques, además de los posibles errores o advertencias que puedan ocurrir. 
+\item La caja de herramienta ocupa menos espacio al estar conformada únicamente de metáforas de las acciones, también es semi-transparente para poder observar el contenido que existe detrás.
+\item Todas las acciones son llevadas a cabo únicamente con el ratón, sin tener que usar el teclado. 
+\item Se ofrece la acción de ``cortar'' para poder separar bloques que se intersectan, y la acción ``seleccionar'' que permite obtener toda la información de un bloque en específico.  
 \end{itemize}
 
 \section{MoB API y MoB Repository}
@@ -442,9 +441,9 @@ Varios de estos atributos se nombran durante el proceso de comparación, por lo 
 \begin{itemize}
 \item \textbf{Identificador:} Un identificador arbitrario del bloque. 
 \item \textbf{Geometría:} La geometría del bloque (área, ubicación y coordenadas del rectángulo asociado)
-\item \textbf{Score Geométrico:} La puntuación obtenida por similitudes geométricas. 
+\item \textbf{Puntaje Geométrico:} La puntuación obtenida por similitudes geométricas. 
 \item \textbf{Etiqueta:} La etiqueta que le fue asignada al bloque. 
-\item \textbf{Score Semántico:} La puntuación obtenida por similitudes semánticas (\emph{ie.} labels). 
+\item \textbf{Puntaje Semántico:} La puntuación obtenida por similitudes semánticas (\emph{ie.} labels). 
 \end{itemize}
 
 El proceso de creación de la mejor segmentación consta de las siguientes 3 etapas: 
@@ -457,33 +456,33 @@ El proceso se puede describir en dos pasos:
 Se considera una tolerancia basada en la Distancia Hausdorff \footnote{La distancia Hausdorff es la mayor de todas las distancias existentes desde un punto en un conjunto hasta el punto más cercano en otro conjunto.} entre $b_{k}^{n+1}$ y un $b_{j}^{i} $. 
 Si la distancia es menor o igual a T \footnote{generalmente $T=30px$} se considera que ambos bloques son similares y el $b_{j}^{i}$  tendría el mismo identificador que $b_{k}^{n+1}$.  
  \end{enumerate}
-\item \textbf{Contabilización de puntos:} para complementar el paso anterior, se contabilizan todos los bloques bajo un mismo identificador, para obtener el \textit{score} geométrico. Después, dentro del mismo \textit{pool} de bloques con el mismo identificador se contabilizan todos los que posean las mismas etiquetas, de esta forma obtener el \textit{score} semántico. 
-En la Figura \ref{fig:geom} se observa el cálculo del \textit{score} geométrico. El bloque $b_{1}^{1}$ tiene equivalentes en las tres segmentaciones restantes. 
+\item \textbf{Contabilización de puntos:} para complementar el paso anterior, se contabilizan todos los bloques bajo un mismo identificador, para obtener el \textit{puntaje geométrico}. Después, dentro del mismo \textit{pool} de bloques con el mismo identificador se contabilizan todos los que posean las mismas etiquetas, de esta forma obtener el \textit{puntaje semántico}. 
+En la Figura \ref{fig:geom} se observa el cálculo del \textit{puntaje geométrico}. El bloque $b_{1}^{1}$ tiene equivalentes en las tres segmentaciones restantes. 
 Esto contabiliza 4 ocurrencias en el conjunto de segmentaciones.
 Para el bloque $b_{1}^{4}$ tiene correspondencia en dos de las segmentaciones restantes.
-Finalmente se suman las ocurrencias y se obtiene el score geométrico.
+Finalmente se suman las ocurrencias y se obtiene el puntaje geométrico.
 Este cálculo se realiza cada vez que se incorpora una nueva segmentación de una página.
 
 \begin{figure}[!h]
 \centering
 \includegraphics[width=230px]{mob-best.png}
-\centering\caption{Ejemplo de scores geométricos}
+\centering\caption{Ejemplo de puntajes geométricos}
 \label{fig:geom}
 \end{figure}
 
-En la Figura \ref{fig:lab} se muestra un ejemplo para el cálculo del \textit{score} semántico.
+En la Figura \ref{fig:lab} se muestra un ejemplo para el cálculo del \textit{puntaje semántico}.
 Se basa en la coincidencia geométrica y adicionalmente que la etiqueta de los bloques coincidan.
 En el ejemplo se puede observar para la segmentación $S_1$ las siguientes etiquetas: HDADF (corto para \textit{header}, \textit{aside}, \textit{article}, \textit{aside} y \textit{footer}, respectivamente).
-La segmentación $S_1$ tiene el mayor \textit{score} semántico. Es un fuerte candidato para ser incorporado
+La segmentación $S_1$ tiene el mayor \textit{puntaje semántico}. Es un fuerte candidato para ser incorporado
 
 \begin{figure}[!h]
 \centering
 \includegraphics[scale=0.4]{mob-best-label-2.png}
-\centering\caption{Ejemplo de scores semánticos}
+\centering\caption{Ejemplo de puntajes semánticos}
 \label{fig:lab}
 \end{figure}
 
-\item \textbf{Creación de la mejor segmentación:} para crear la mejor segmentación se incluyen todos aquellos bloques (uno por cada identificador) cuyo \textit{score} geométrico sea mayor que el 50\% del número de segmentaciones realizadas, esto garantiza que la mayoría de los usuarios opina que ese bloque debe existir. Dicho bloque poseerá la etiqueta más utilizada para ese bloque, es decir, se busca entre los de un mismo identificador la etiqueta que tenga el mayor \textit{score} semántico. En el ejemplo mostrado en la Figura \ref{fig:lab} el bloque $b_{1}^{1}$ tendría asociada la etiqueta H la cual es la más popular para esa área de la página.
+\item \textbf{Creación de la mejor segmentación:} para crear la mejor segmentación se incluyen todos aquellos bloques (uno por cada identificador) cuyo \textit{puntaje geométrico} sea mayor que el 50\% del número de segmentaciones realizadas, esto garantiza que la mayoría de los usuarios opina que ese bloque debe existir. Dicho bloque poseerá la etiqueta más utilizada para ese bloque, es decir, se busca entre los de un mismo identificador la etiqueta que tenga el mayor \textit{puntaje semántico}. En el ejemplo mostrado en la Figura \ref{fig:lab} el bloque $b_{1}^{1}$ tendría asociada la etiqueta H la cual es la más popular para esa área de la página.
 \end{enumerate}
 
 \section{Verificación del Sistema}
