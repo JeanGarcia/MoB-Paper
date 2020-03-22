@@ -1,0 +1,53 @@
+Correcciones Feb 16 2020:
+
+1.- Resumen y Abstract:
+
+- Se introdujo la aclaración de qué se abarca en el desarrollo del trabajo y la obtención de la mejor segmentación, se eliminó la frase "no está dentro del alcance de este trabajo la evaluacion de la mejor
+segmentación" para evitar confusiones.
+
+- De la misma forma se corrige el abstract. 
+
+
+2.- Introducción:
+
+- Se modifica la frase "ground thuth" por "base referencial" aqui y a lo largo del paper. 
+
+- Se agrega una breve descripción de la mejor segmentación manual para poner en contexto al lector.
+
+
+3.- Antecedentes:
+
+- Se separan las oraciones segun lo indicado.
+
+- Se arregla la referencia a Kiesel.
+
+- Se especifica el "esto" en la frase "Una vez hecho esto".
+
+- Se arregla el contexto de la frase en ", segmentar y anotar etiquetas.". Se reubica la frase "Puede verse en la Figura 1." al comienzo del parrafo.
+
+
+4.- Sección III-C: 
+
+- La mejor segmentación manual se aclara en la Introducción y bajo que criterio se considera mejor.
+
+- Se agrega la referencia al Cuadro I.
+
+- Se expresa los valores de G más explicitamente. 
+
+
+5.-  Sección III-D
+
+- Se aclara a que se refiere con "antigua versión" y se corrige las oraciones donde se describen las diferencias.
+
+
+6.- Sección IV-C:
+
+- Se describe la mejor segmentación y el criterio usado en su obtención.
+
+- Se elimina el subrayado rojo de la Figura 3.
+
+
+7.- Conclusión:
+
+- Se elimina el párrafo indicado.
+

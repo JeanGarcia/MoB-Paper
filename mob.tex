@@ -165,7 +165,10 @@ Buscamos la mejor segmentación manual, la cual es una composición basada en el
 %
 El principio es que un bloque estará en la mejor segmentación si el área de la página ha sido seleccionada por la mayoría de los usuarios como un bloque.
 %
-Ambas segmentaciones deben estar ajustadas a una misma granularidad, la cual define el tamaño general de los bloques dentro de una segmentación.
+Ambas segmentaciones deben estar ajustadas a una misma granularidad, la cual define el tamaño general de los bloques dentro de una segmentación. Se define entonces, para nuestro caso, que la mejor segmentación manual es aquella que contiene los bloques más populares en un conjunto de segmentaciones manuales.
+Si la mayoría de usuarios han marcado un área de la página como un bloque, este se considerará popular.
+Entonces se toman los bloques más populares, se crea una nueva segmentación que los contenga, y esta será considerada la mejor. Más información acerca de la obtención de la mejor segmentación manual se describe en la sección IV-C.  
+
 %
 Segmentar una página Web manualmente puede ser una tarea compleja y propensa a errores. 
 %
@@ -429,7 +432,7 @@ A los usuarios administradores les permite administrar las etiquetas utilizadas 
 
 \subsection{Creación de la Mejor Segmentación}
 
-La mejor segmentación manual es aquella que contiene los bloques más populares en un conjunto de segmentaciones manuales.
+Como se mencionó en la introducción, definimos que para nuestro trabajo, según nuestra experiencia y los datos obtenidos, la mejor segmentación manual es aquella que contiene los bloques más populares en un conjunto de segmentaciones manuales.
 Si la mayoría de usuarios han marcado un área de la página como un bloque, este se considerará popular.
 Entonces tomamos los bloques más populares, creamos una nueva segmentación que los contenga, esta será considerada la mejor.
 
